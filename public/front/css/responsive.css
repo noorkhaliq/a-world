@@ -1,0 +1,170 @@
+/*// X-Small devices (portrait phones, less than 576px)*/
+@media (max-width: 576px) {
+    .header_section {
+        background-image: url("../images/mobile-bg.png");
+        background-size: cover;
+        padding: 0px;
+        height: auto;
+    }
+    .a_image {
+        padding: 12px;
+    }
+    .services_taital {
+        margin-top: 3rem;
+    }
+    .about_taital_main {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+    .blog_text {
+        width: 100%;
+    }
+    .play_icon_main{
+        margin-top: 29px;
+    }
+
+    .blog_section {
+        background-image: url("../images/blog-mobile-bg.png");
+        background-size: cover;
+        padding: 50px 0px;
+    }
+    .readmore_bt a{
+        width: 43%;
+        margin-bottom: 3rem;
+    }
+    .banner_taital{
+        font-size: 43px;
+    }
+    .readmore_bt {
+        width: 100%;
+    }
+    .input_btn_main{
+        width: 100%;
+        display: inherit;
+        background-color: transparent !important;
+    }
+    .newsletter_box{
+        text-align: center;
+    }
+    .banner_text {
+        text-align: center;
+        width: 100%;
+    }
+    .getquote_bt {
+        margin-bottom: 13px;
+    }
+    .footer_section {
+        background-image: url("../images/footer-mobile-bg.png");
+        background-size: cover;
+        padding: 50px 0px;
+    }
+
+    .subscribe_bt {
+        margin: 0 auto;
+        text-align: center;
+        width: 211px;
+        float: none;
+    }
+    .subscribe_bt a {
+        width: 100%;
+        background-color: #ffffff;
+        margin-top: 50px;
+        border-radius: 40px;
+        margin-bottom: 50px;
+    }
+    .services_section{
+        padding-bottom: 0px;
+    }
+    .let_text{
+        font-size: 30px;
+        text-align: center;
+    }
+    .choose_text{
+        width: 100%;
+    }
+    .navigation{
+        float: right;
+        width: 24%;
+        margin-top: -6px;
+        margin-bottom: 61px;
+    }
+    .logo {
+        padding: 8px;
+        width: 40%;
+    }
+    .navbar-dark .navbar-toggler {
+        color: rgb(231 224 224);
+        border-color: rgb(255 255 255);
+    }
+    .menu_main li a{
+        margin-left: -178px;
+    }
+    .menu_main{
+        margin-top: 13px;
+    }
+    /*about page*/
+    .about_header_section {
+        background-image: url("../images/mobile-bg.png");
+        background-size: cover;
+        padding: 0px;
+        height: 4rem;
+    }
+    .about_footer_section{
+        margin-top: -43px;
+        background-image: url("../images/footer-mobile-bg.png");
+        background-size: cover;
+        padding: 50px 0px;
+    }
+    .about_title{
+        margin-top: -50px;
+    }
+    .title {
+        margin-top: 0;
+    }
+    .blog_nav {
+        /*background-image: url("../images/mobile-bg.png");*/
+        color: black;
+    }
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    .banner_taital{
+        font-size: 56px;
+    }
+    .input_btn_main {
+        width: 100% !important;
+    }
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .banner_taital {
+        font-size: 80px;
+    }
+
+   .input_btn_main{
+        width: 75% !important;
+    }
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .input_btn_main{
+        width: 50% !important;
+    }
+}
+
+/*// X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+    .input_btn_main{
+        width: 50% !important;
+    }
+}
+
+
+
+
