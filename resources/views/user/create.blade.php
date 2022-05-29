@@ -10,7 +10,7 @@
                             <form  method="post" action="{{route('user.save')}}" class="forms-sample">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputUsername1">Username</label>
+                                    <label for="exampleInputUsername1">Name</label>
                                     <input type="text" name="name" class="name form-control" value="{{ old('name') }}" placeholder="Username">
                                 </div>
                                 <div class="form-group">
