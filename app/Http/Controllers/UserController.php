@@ -28,7 +28,12 @@ class UserController extends Controller
 
     public function update($id)
     {
-        $data = request()->only(['name','email','password']);
+        request()->validate([
+        'name' => 'required',
+        'email' => 'required'
+        ]);
+
+        $data = request()->only(['name', 'email',]);
 
         User::where('id', $id)->update($data);
         return redirect()->route('user.index');
@@ -42,7 +47,13 @@ class UserController extends Controller
 
     public function save(Request $request)
     {
-        $data=request()->only(['name','email','password']);
+        $request->validate([
+            'name' => 'required',
+            'password' => 'required|min:5',
+            'email' => 'required|unique:users'
+        ]);
+        $data = $request->only(['name', 'email',]);
+        $data['password'] = bcrypt(request()->password);
         User::create($data);
         return redirect()->route('user.index');
     }

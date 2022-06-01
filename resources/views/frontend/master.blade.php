@@ -97,10 +97,11 @@
 <!-- footer section start -->
 <div class="footer_section w-100 float-left h-auto layout_padding">
     <div class="container">
-        <div class=" input_btn_main m-auto  ">
-            <input type="text" class=" mail_text w-100 float-left h-auto " placeholder="Enter your email" name="Enter your email">
-            <div class="subscribe_bt  "><a href="javascript:void(0)" class="float-left text-center text-uppercase col-lg-3">Subscribe</a></div>
-        </div>
+        <form id="subscribe_form" method="post" action="{{route('front.subscribe.save')}}"  class=" input_btn_main m-auto  ">
+            <input type="text" class=" mail_text w-100 float-left h-auto"  placeholder="Enter your email" name="email" required="required">
+            <div class="subscribe_bt">
+                <button type="submit" class="border-0 float-left text-center text-uppercase col-lg-3">Subscribe</button></div>
+        </form>
         <div class="location_main w-100 text-center">
             @php
                 $socials = $frontControllerObject->getAddress();
@@ -132,5 +133,32 @@
     </div>
 </div>
 <!-- copyright section end -->
+
+<script>
+    $(function(){
+        $("#subscribe_form").on('submit', function(e){
+            e.preventDefault();
+
+            $.ajax({
+                url:$(this).attr('action'),
+                method:$(this).attr('method'),
+                data:new FormData(this),
+                processData:false,
+                dataType:'json',
+                contentType:false,
+                success:function(data){
+                    if(data.status == 0){
+                        $.each(data.error, function(prefix, val){
+                            $(span.prefix+'_error').text(val[0]);
+                        });
+                    }else{
+                        $('#subscribe_form')[0].reset();
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

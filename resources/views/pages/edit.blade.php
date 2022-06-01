@@ -26,8 +26,6 @@
                                     <textarea name="description" id="summernote" class="form-control">{{$pages->description}}</textarea>
                                 </div>
 
-
-
                                 <div class="form-group ">
                                     <label for="">Type</label>
                                     <select name="type" class="form-control" required>

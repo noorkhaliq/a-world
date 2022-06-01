@@ -2,6 +2,8 @@
 @section('content')
     <div class="main-panel w-100">
         <div class="content-wrapper">
+            @include('layouts.error')
+
             <div class="row">
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">

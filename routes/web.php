@@ -25,6 +25,7 @@ Route::get('contact-us',          [\App\Http\Controllers\FrontendController::cla
 Route::get('services',         [\App\Http\Controllers\FrontendController::class, 'services'])->name('front.services');
 Route::get('services/{slug}',  [\App\Http\Controllers\FrontendController::class, 'servicesDetail'])->name('front.services.detail');
 Route::post('contactus/save',  [\App\Http\Controllers\FrontendController::class, 'save'])->name('front.contact.save');
+Route::post('subscribe/save',  [\App\Http\Controllers\FrontendController::class, 'subscribeSave'])->name('front.subscribe.save');
 
 
 Route::prefix('admin')->group(function () {
