@@ -75,6 +75,7 @@ class UserController extends Controller
                 return '<a class="btn btn-primary" href="'.route('user.edit' , $q->id).'" >Edit</a>
                       | <a class="btn btn-danger deleteUser" href="'.route('user.delete', $q->id).'">Delete</a>';
             })
+
             ->rawColumns(['actions'])
             ->make(true);
     }

@@ -73,30 +73,6 @@ class FrontendController extends Controller
         return Settings::where('type' , 'social')->get();
     }
 
-    function save(Request $request)
-    {
-        $validator = \Illuminate\Support\Facades\Validator::make($request->all(),[
-            'name'=>'required',
-            'phone'=>'required',
-            'message'=>'required',
-            'email' => 'required'
-        ]);
-
-        if(!$validator->passes()){
-            return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
-        }else{
-            $values = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'message' => $request->message,
-            ];
-            $query = DB::table('contactus')->insert($values);
-            if( $query ){
-                return response()->json(['status'=>1, 'msg'=>'New Contact has been successfully registered']);
-            }
-        }
-    }
 
     function subscribeSave(Request $request)
     {
@@ -113,6 +89,31 @@ class FrontendController extends Controller
             $query = DB::table('contactus')->insert($values);
             if( $query ){
                 return response()->json(['status'=>1, 'message'=>'Your subscription has been submitted']);
+            }
+        }
+    }
+
+    function save(Request $request)
+    {
+        $validator = \Illuminate\Support\Facades\Validator::make($request->all(),[
+            'name'=>'required|min:3',
+            'phone'=>'required|min:3',
+            'message'=>'required',
+            'email' => 'required'
+        ]);
+
+        if(!$validator->passes()){
+            return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
+        }else{
+            $values = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'message' => $request->message,
+            ];
+            $query = DB::table('contactus')->insert($values);
+            if( $query ){
+                return response()->json(['status'=>1, 'msg'=>'New Contact has been successfully registered']);
             }
         }
     }

@@ -7,9 +7,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title d-block" style="float:left;display: block">Contact List</h4>
-                            <a href="{{route('contact.create')}}" class="btn btn-primary mb-5" style="float: right" >&plus;</a>
-
-                            <div class="table-responsive overflow-hidden" style="margin-top: 5rem;width: 100%;">
+                            <div class="table-responsive " style="margin-top: 5rem;width: 100%;">
                                 <table id="userDataTable" class="table table-striped">
                                     <thead>
                                     <tr>
@@ -18,6 +16,7 @@
                                         <th>E-mail</th>
                                         <th>Phone Number</th>
                                         <th>Message</th>
+                                        <th>Is Replied</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -33,7 +32,7 @@
         var table = undefined;
         $(document).ready(function () {
             table = $('#userDataTable').DataTable({
-                "ajax": "{{route('contact.list')}}",
+                "ajax": "{{route('contactus.list')}}",
                 "processing": true,
                 "serverSide": true,
                 "columns": [
@@ -42,33 +41,29 @@
                     {"data": "email", name: 'email'},
                     {"data": "phone", name: 'phone'},
                     {"data": "message", name: 'message'},
+                    {"data": "replied", name: 'is_replied'},
                     {"data": "actions", searchable: false, orderable: false},
                 ]
             })
-            // $('body').on('click', '.deleteCategory', function (e) {
-            //     e.preventDefault();
-            //     var url = $(this).attr('href');
-            //     $.ajax({
-            //         url: url,
-            //         type: 'delete',
-            //         success: function(response) {
-            //             table.ajax.reload();
-            //         }
-            //     })
-            // });
+
+
             $('body').on('click', '.deleteContact', function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
                 if (confirm("Are you sure?")) {
-                    var data = $(this).val();
-                    $.post('requests/seminars.php', {delete_sem: data}, function (data) {
-                        if (data == "delete") {
-                            location.reload();
-                        } else {
-                            alert(data);
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+                        success: function() {
+                            table.ajax.reload();
                         }
-                    });
+                    })
                 }
             });
+
         });
+
+
     </script>
 
 

@@ -26,21 +26,14 @@ CREATE TABLE `contactus` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_replied` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `contactus` */
-
-insert  into `contactus`(`id`,`name`,`email`,`phone`,`message`,`created_at`,`updated_at`,`deleted_at`) values 
-(1,'Noor','admin@admin.com','021232323232','assasas',NULL,NULL,NULL),
-(2,'Noor','admin@admin.com','021232323232','wsasasa',NULL,NULL,NULL),
-(3,'Noor','admin@admin.com','021232323232','qsasas',NULL,NULL,NULL),
-(4,'Noor','admin12121@admin.com','021232323232','asdjasdfhajf',NULL,NULL,NULL),
-(5,'Kha  Gyulasjd','admin12121@admin.com','232323232','sdfsfsfds',NULL,NULL,NULL),
-(6,'Noor','admin12@admin.com','021232323232','asasas',NULL,NULL,NULL);
 
 /*Table structure for table `failed_jobs` */
 
@@ -69,20 +62,20 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `migrations` */
 
 insert  into `migrations`(`id`,`migration`,`batch`) values 
-(1,'2014_10_12_000000_create_users_table',1),
-(2,'2014_10_12_100000_create_password_resets_table',1),
-(3,'2019_08_19_000000_create_failed_jobs_table',1),
-(4,'2019_12_14_000001_create_personal_access_tokens_table',1),
-(5,'2022_05_29_002115_create_pages_table',1),
-(6,'2022_05_29_002400_create_services_table',1),
-(7,'2022_05_29_002521_create_contactus_table',1),
-(8,'2022_05_29_002631_create_settings_table',1),
-(9,'2022_05_29_002744_create_slider_table',1);
+(19,'2014_10_12_000000_create_users_table',1),
+(20,'2014_10_12_100000_create_password_resets_table',1),
+(21,'2019_08_19_000000_create_failed_jobs_table',1),
+(22,'2019_12_14_000001_create_personal_access_tokens_table',1),
+(23,'2022_05_29_002115_create_pages_table',1),
+(24,'2022_05_29_002400_create_services_table',1),
+(25,'2022_05_29_002521_create_contactus_table',1),
+(26,'2022_05_29_002631_create_settings_table',1),
+(27,'2022_05_29_002744_create_slider_table',1);
 
 /*Table structure for table `pages` */
 
@@ -99,13 +92,13 @@ CREATE TABLE `pages` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `pages` */
 
 insert  into `pages`(`id`,`title`,`image`,`description`,`slug`,`type`,`created_at`,`updated_at`,`deleted_at`) values 
-(3,'About Us','1653788439.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum','about-us','page','2022-05-29 01:38:06','2022-05-29 01:40:39',NULL),
-(4,'See Our Video','1653788456.png','many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which','blogs','page','2022-05-29 01:38:06','2022-05-29 01:40:56',NULL);
+(1,'About Us',NULL,'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur','about-us','page','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(2,'See Our Video',NULL,'many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which','blogs','page','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL);
 
 /*Table structure for table `password_resets` */
 
@@ -155,21 +148,21 @@ CREATE TABLE `services` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `services` */
 
 insert  into `services`(`id`,`title`,`image`,`description`,`slug`,`created_at`,`updated_at`,`deleted_at`) values 
-(11,'occaecati atque','1653788182.png','Eveniet dolorem laborum in facilis sed non facere. Dolor eum vel numquam quod. Animi ut et maxime sunt qui hic aut. Laudantium temporibus enim dicta possimus pariatur corporis. Qui aut laborum dolore recusandae ut. Ea et et nisi laboriosam. Modi quo a non incidunt molestias cumque. Nam dolore animi quidem. Reiciendis velit magni quas ratione id molestias. Non tenetur officiis dolor eos.','vel-voluptatum-earum','2022-05-29 01:38:06','2022-05-29 04:29:16',NULL),
-(12,'rerum consequatur','1653788191.png','Sunt sequi ex quisquam sit rem excepturi. Quos consequatur sed ducimus itaque in porro unde et. Voluptatum dolorem omnis exercitationem maxime sunt recusandae temporibus. Distinctio dolores praesentium voluptas debitis dolore enim asperiores. Asperiores dolores consequatur est quis saepe dolor. Quod velit illo aut reiciendis est. Sunt eum totam quis dolor commodi maiores in. Et assumenda ipsum qui quo. Aut inventore cum qui. Iusto magni aut repudiandae ducimus corporis illum autem.','reprehenderit-recusandae-consequatur','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(13,'neque officia','1653788202.png','Cumque fugit est facilis mollitia quam. Dolores non qui sed qui quisquam velit. Tempora rerum recusandae deserunt molestias maiores reprehenderit rerum. Labore libero enim consectetur adipisci ut quia molestiae cum. Natus ea hic consequatur debitis modi. Porro natus exercitationem unde ut nesciunt. Quasi ratione suscipit et. Voluptatibus doloribus qui ut quisquam ad voluptatem ut. Error aliquam in vero. Cumque aut eos quae magni dicta consectetur.','quis-enim-temporibus','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(14,'illo praesentium','1653788182.png','Non quis dolores ipsam totam. Est mollitia non consequatur voluptate ea amet. Dolore in dolore quia dolorem et quidem et. Qui animi corporis at et excepturi aut praesentium. Aut accusantium quae iusto et aut et. Sit suscipit voluptas non voluptas. Officia voluptas explicabo excepturi accusamus ut voluptate illum hic. Autem velit doloribus aut facere autem in. Deserunt earum eum eos illo. Est est illum perspiciatis tempora et et.','magnam-sit-sit','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(15,'fugit suscipit','1653788191.png','Eos facere fugit fugiat expedita eaque sint. Officiis id aperiam sed ut. Minus dolor voluptatem sit. Consequatur sunt quis atque. Quidem cumque sunt et error est dolorem est. Voluptatem asperiores praesentium ex quod pariatur. Et deleniti explicabo sint aliquid repudiandae vitae. Distinctio ex qui adipisci et. Quidem sequi explicabo nostrum. Possimus atque sint quaerat.','culpa-saepe-doloribus','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(16,'repellat necessitatibus','1653788202.png','Totam repellendus minima ut corporis ipsam vel. Ea sunt sit eum blanditiis nihil. Sed totam accusamus impedit et aperiam. Numquam nihil laborum ipsum commodi. Itaque eos quidem vitae aut nihil voluptate at. Voluptas mollitia aliquid dicta sed et cumque sed. Aspernatur id non eos totam et omnis. Expedita possimus et eos voluptas ducimus omnis ea provident. Labore et est voluptas earum et. Dignissimos minus laboriosam voluptatem cumque sed.','ipsam-voluptatibus-iusto','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(17,'rerum voluptatum','1653788182.png','Est labore magnam voluptates voluptatem similique et laudantium. Alias qui sint ea natus sunt et. Qui maiores neque soluta ea. Et ex dicta nihil in. Quae id corporis perspiciatis corporis molestias voluptas alias. Enim blanditiis maxime aut et culpa reprehenderit ut nulla. Vel facilis quod eum aut aspernatur vero beatae. Asperiores est possimus officiis qui. Id quia animi nihil dolorem earum. Magnam ut officiis iure itaque distinctio consequatur non magnam.','molestiae-qui-optio','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(18,'dignissimos nihil','1653788191.png','Libero tempore qui necessitatibus ea id placeat sit. Eius maiores quo ut illo dolore tempora. Eos dolorum ex quia recusandae. Odio veniam similique qui qui et commodi possimus. Similique quisquam sint incidunt quo soluta eligendi. Labore perferendis aspernatur maxime suscipit atque. Consequatur omnis eaque sed ea. In optio sunt blanditiis perspiciatis occaecati ex. Quam reprehenderit porro sed doloremque. Sint aut corrupti rerum provident deserunt nisi.','architecto-est-iusto','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(19,'ut illo','1653788202.png','Delectus sequi reiciendis facilis suscipit asperiores ea officia. Placeat omnis quo provident quaerat nihil eum exercitationem. Est molestiae voluptatem maiores illum. Unde dolores quis et doloremque occaecati et beatae. Sint ea cupiditate reiciendis. Et libero quos esse quo est perspiciatis consectetur. Culpa nesciunt libero qui qui. Et unde sit nemo ut. Impedit doloremque unde et eaque quaerat doloribus ut. Ipsam vero similique incidunt illum.','odio-nesciunt-non','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL),
-(20,'sed omnis','1653788182.png','Rem quae quis quam voluptatem quasi omnis. Nesciunt aut et odit nobis. Sunt dolore quia rem nesciunt omnis voluptatem eaque. Porro non et excepturi dolorum nostrum alias ea. Expedita ratione quod nihil sed. Aut totam non sit repellendus inventore accusamus. Eos alias veniam corrupti. Ut quasi ut libero dignissimos corporis sunt facilis. Ut necessitatibus eum totam qui quibusdam. Doloremque fugiat iure rerum totam.','facere-aut-dolor','2022-05-29 01:38:06','2022-05-29 01:38:06',NULL);
+(1,'alias et',NULL,'Dolore et quasi esse nesciunt neque eius laborum. Enim maxime expedita vel assumenda blanditiis. Dolor quae consectetur omnis ut possimus. Nihil est voluptatem veniam aliquid id. Ipsam sint et ut. Blanditiis molestiae sit rem placeat ipsam quis optio. Error ea totam repellat eum omnis voluptatem quae. Consectetur sequi est rerum illum necessitatibus autem. Non quae est omnis rerum fugiat beatae. Esse eos temporibus dolorum officiis. Omnis aperiam consectetur vel voluptatibus perspiciatis illum est. Vel non ea sint est provident. Necessitatibus aut sint labore soluta labore facere voluptate. Illo amet mollitia quas laudantium expedita quod dolorem. Assumenda explicabo rerum quos sed. Quis itaque omnis rerum aut sunt. Voluptatem ut quibusdam beatae laborum. Quaerat illo et modi optio sed error. Consequatur minima placeat quo dolor iste. Alias praesentium sed eaque officiis sit facilis.','in-tenetur-consequatur','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(2,'recusandae qui',NULL,'Rerum velit provident praesentium consequuntur. Eos fuga consequatur repellendus voluptas sunt. Necessitatibus iure reiciendis atque sint repudiandae ea. Eos modi esse beatae et qui et suscipit. Quia voluptas atque eum dolorem dolorum maiores expedita. Eligendi reiciendis quam placeat quas consequatur impedit beatae non. Reiciendis quisquam dolores consequatur consectetur dolorem vitae. Qui sunt ut aperiam. Enim aliquid qui qui. Rem vel a rem. Aut similique ex autem dolorum vero. Possimus ab ipsam ratione error aut. Nesciunt quisquam dolores enim in id. Ratione eveniet quasi deleniti sed dolorem debitis. Quis placeat laborum et iste voluptatem esse. Est asperiores ex aut nesciunt cum soluta quisquam. Cumque deleniti quae minus facere voluptatem harum adipisci quia. Nobis veritatis voluptatem ut unde illum tempora vel. Ex voluptatum ab impedit reprehenderit quas nostrum recusandae. Ipsum pariatur dolor soluta est quia dolores.','corporis-est-vero','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(3,'corrupti maiores',NULL,'Dolore odio ratione quis amet. Tempore dolores temporibus natus exercitationem et fugit alias. Qui praesentium ab mollitia possimus expedita corporis. Sapiente dolorum suscipit ullam ex et. Et dignissimos consequatur reiciendis rerum. Pariatur ab sit officia officiis beatae. Id impedit ab aut ut rerum provident. Molestiae ut aperiam assumenda vitae. Atque qui cupiditate voluptas blanditiis est. Doloremque dignissimos eligendi et sed consequatur. Corrupti at itaque dicta velit ipsum. Esse cupiditate rerum porro consequuntur. Sit eveniet ut eaque rerum eveniet quidem. Aut harum maiores et quod. Et quo veritatis eligendi qui qui. Iure vitae sed tempore aspernatur quam quidem. Qui sunt est officia voluptatum. Voluptatem perspiciatis nemo illo consequatur maxime quo dolores est. Rerum hic id repellendus non officiis. Asperiores velit deleniti voluptates qui omnis qui reiciendis.','tenetur-id-ducimus','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(4,'sit est',NULL,'Voluptatem adipisci esse et optio aperiam vel et omnis. Assumenda earum aut consequuntur est. Aspernatur et nemo incidunt veritatis et hic delectus. Labore dolor velit et et. Sed molestias eos corporis optio. Distinctio sunt eaque numquam expedita. Ut veritatis veniam amet. Amet perferendis accusantium veritatis earum. Tempore sed eos distinctio accusamus non cum nam. Fugit et officiis numquam alias minima. Aliquam illum et est deleniti iusto corporis similique. Iure sit eum cumque sit voluptatum. Adipisci eaque quis qui nisi debitis sit. Quibusdam voluptatem quia libero. Sunt laboriosam dolorum vitae sunt consequatur vel. Doloribus aliquid porro harum et facilis impedit aspernatur. Provident et non autem facere et quas. Ipsum esse cum doloribus in molestias iste et. Esse nostrum eos doloremque quam. Quidem ut aut earum doloremque.','qui-porro-voluptatem','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(5,'maxime fuga',NULL,'Aspernatur ab soluta quisquam esse. Omnis minus ducimus dolor maiores. Quasi quaerat neque ullam esse. Unde sit exercitationem aperiam. Ad vel illo eligendi suscipit est. Mollitia ab molestiae minima ex sit. Incidunt odio voluptates aut quasi. Soluta id fugiat culpa. Maiores omnis enim omnis cumque itaque. Ut repellendus animi enim amet consequatur. Dolor recusandae fugit doloribus ut nisi. Ipsam perferendis aut ea aspernatur. Dolores cumque exercitationem aliquid molestias sequi. Sapiente error accusamus voluptatum temporibus adipisci dolorem labore. Voluptatibus nihil harum aspernatur blanditiis necessitatibus totam. Sit sequi et expedita modi sint velit. Deserunt minus qui quos suscipit tenetur ut. Voluptate suscipit cumque aperiam corporis. Beatae quia beatae exercitationem similique. Minus aperiam et laudantium exercitationem incidunt.','omnis-ipsam-sit','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(6,'quo praesentium',NULL,'Ut modi a voluptatem quo libero doloribus. Natus aperiam dignissimos labore voluptas. Voluptatum veniam suscipit natus alias. Minima dolores incidunt architecto minima ipsa ab. Et ducimus vitae sunt voluptatum quia omnis debitis. Necessitatibus sequi quasi quisquam harum nemo eos. Tempore error qui eos ea. Dolorum et nulla nemo et ipsum sit. Voluptatem sunt nemo consectetur laudantium eum et omnis. Animi autem blanditiis ea ut ullam est. Aut quae tempora qui non reiciendis non voluptatem. Excepturi rerum veritatis voluptas natus non ullam beatae. Sed dolores accusantium alias iste sit doloribus qui. Animi repudiandae sit quod libero quia. Itaque placeat eligendi fuga illo corporis qui. Suscipit voluptatum delectus repudiandae fugiat molestias. Quasi amet optio eaque culpa vero. Sint et quaerat at ut. Vel vero assumenda tempore corporis exercitationem magnam. Eos facilis saepe veritatis accusamus excepturi est et.','nihil-eaque-excepturi','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(7,'nam voluptatem',NULL,'Quo suscipit enim est. Et velit sunt ea ex est omnis. Est rerum consequatur qui quis. Amet voluptatem ut neque omnis labore. Et doloribus voluptate expedita. Accusantium quidem esse debitis vero quae vel nesciunt. Tempora quisquam laborum sunt at numquam. Voluptas alias sed hic voluptas adipisci dolorem quae. Quia eos voluptates labore rerum ipsum quisquam facere. Voluptatem fugiat esse quidem quidem sequi. Iusto omnis aperiam cupiditate qui mollitia eius in. Aspernatur vitae soluta illum optio consequatur eaque pariatur voluptas. Exercitationem ea quo quia eum. Quia dolore placeat eum sapiente. Beatae corrupti voluptates tenetur corporis optio tenetur harum. Sed sapiente repellat non adipisci molestiae perspiciatis natus. Qui recusandae nostrum delectus voluptatem quia ad. Ipsam ipsa laboriosam occaecati quaerat aliquam sapiente architecto. In vel maiores dolores nostrum consectetur nemo. Aut a sint tenetur quia qui est rem.','non-quo-sit','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(8,'eos nostrum',NULL,'Eveniet nisi est ut hic perspiciatis atque velit. Commodi accusamus ut voluptas qui quas et. Quae deleniti eaque inventore consequatur a. Sint amet autem nam. Quos voluptas rerum natus esse. Laboriosam ut deleniti suscipit nulla nihil eos at. Cupiditate laboriosam explicabo dignissimos est consequatur. Suscipit explicabo et error provident velit est dolor accusantium. Ipsam est dolores at quia optio incidunt aut quasi. Enim sequi dicta quas quia laudantium aut dicta sed. Nesciunt earum nemo iusto sit. Itaque animi nisi est quia. Perferendis vero enim omnis esse dolorem ut. Aliquam qui ut ipsam esse. Praesentium optio a veniam dolore et. Fuga id facilis vel omnis. Vel quaerat qui vitae voluptatum deleniti. Iste sint sed velit quia assumenda modi et. Id molestiae asperiores laboriosam unde repudiandae adipisci sint. Vel rem modi nisi ex cumque qui et.','alias-explicabo-quas','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(9,'non ut',NULL,'Eos minus enim est. Deleniti quibusdam maxime ratione unde et et iure. Vel ad tenetur aut nihil impedit laudantium dolores. Iure perferendis sint non nemo blanditiis dicta aut eum. Ut nemo ex ea eligendi quia veritatis placeat. Ipsam exercitationem sunt itaque voluptatem quia rerum laudantium ut. Atque eligendi dolores aperiam. Et rem possimus cum corrupti qui esse. Sit optio modi necessitatibus cum. Placeat maiores tenetur dolorem ad quaerat aspernatur qui. Mollitia cumque earum totam ratione cumque voluptatum nobis. Cumque ad nostrum eum architecto voluptas. Quaerat nihil provident reprehenderit natus id natus ipsam temporibus. Dolorum fugit magnam perferendis sit. Quam perferendis error neque sint quia incidunt cum. Nam eveniet et quos consectetur eum id adipisci. Vero molestiae cum pariatur eveniet facilis enim omnis tempora. Ullam facere amet et ipsum facilis quia. Occaecati praesentium quo dolorem quos accusamus voluptas molestiae. Aut totam rerum ut minima.','sit-qui-repudiandae','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(10,'porro odio',NULL,'Consectetur ut dolorem qui consequatur molestiae aliquid possimus ratione. Voluptatum laudantium totam in commodi. Sed ipsam libero officiis. Recusandae velit necessitatibus sint ut iure quis minima. Cum corrupti eligendi ex eaque quia voluptatem eius sapiente. Expedita at natus vero doloribus saepe nemo placeat. Repellendus veniam sunt voluptatem delectus enim quia in. Consequatur quas dolor possimus. Enim ducimus tenetur earum at voluptatem. Totam eos sit consequatur provident in. Quos molestiae non et dolor non vel accusamus. Nemo et assumenda veritatis. Nesciunt eum perspiciatis et et. Sit quos maiores voluptas ut et minima voluptas. Est est dolorem qui eius. Qui a totam sit aut consequatur. Voluptates voluptatem possimus dolorum commodi ratione sint ex. Quam neque labore accusamus nisi velit et. Ex dolor molestiae quia perferendis maiores qui alias. Illum qui ea consectetur eos.','ex-et-fugiat','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL);
 
 /*Table structure for table `settings` */
 
@@ -185,17 +178,9 @@ CREATE TABLE `settings` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `settings` */
-
-insert  into `settings`(`id`,`title`,`link`,`image`,`type`,`created_at`,`updated_at`,`deleted_at`) values 
-(1,'Call +01 1234567890','http://twitter.com','1653796609.png','address','2022-05-29 03:56:49','2022-05-29 04:29:44',NULL),
-(2,'demo@gmail.com','http://twitter.com','1653796640.png','address','2022-05-29 03:57:21','2022-05-29 03:57:21',NULL),
-(3,'Facebook','http://facebook.com','1653796692.png','social','2022-05-29 03:58:12','2022-05-29 03:58:12',NULL),
-(4,'Twitter','http://twitter.com','1653796718.png','social','2022-05-29 03:58:38','2022-05-29 03:58:38',NULL),
-(5,'Linkin','http://linkindin.com','1653796752.png','social','2022-05-29 03:59:12','2022-05-29 03:59:12',NULL),
-(6,'Instagram','http://instagram.com','1653796781.png','social','2022-05-29 03:59:41','2022-05-29 03:59:41',NULL);
 
 /*Table structure for table `slider` */
 
@@ -209,14 +194,14 @@ CREATE TABLE `slider` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `slider` */
 
 insert  into `slider`(`id`,`title`,`description`,`created_at`,`updated_at`,`deleted_at`) values 
-(7,'sequi at','Ut et numquam earum debitis magni amet doloremque. Qui qui blanditiis accusantium est. Nemo at enim et distinctio. Corporis consequuntur quam quos est eum.','2022-05-29 03:54:32','2022-05-29 03:54:32',NULL),
-(8,'eos aut','Accusantium doloremque numquam suscipit unde aliquam. Deserunt quos recusandae et consequuntur quos a eum. Exercitationem repudiandae ea reprehenderit sed est. Consequatur temporibus quis incidunt nam eaque minima.','2022-05-29 03:54:32','2022-05-29 03:54:32',NULL),
-(9,'et natus','Omnis quia qui quo perferendis qui. Ut aut nemo eum ea ab explicabo. Possimus qui delectus ab. Sequi consequuntur eius ipsam vero.','2022-05-29 03:54:32','2022-05-29 04:28:49',NULL);
+(1,'aut dolor','Est repellat illum iste esse itaque incidunt debitis. Quo numquam rerum soluta officiis expedita rerum quas. Sapiente omnis inventore sit asperiores consequatur. Natus autem animi sint sint id est nobis illo.','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(2,'fugiat accusamus','Quasi odit qui tenetur nihil dicta rem necessitatibus neque. Laborum aut nihil quam odio debitis. Rerum rem et doloremque veniam nesciunt. Pariatur rerum nihil omnis quod ullam voluptatum nemo.','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL),
+(3,'laboriosam et','Nisi aut ipsam qui esse est rerum mollitia. Quam quo dolorem et ipsam velit. Rerum totam quia laborum odio quis autem libero. Maiores quibusdam assumenda a et est sunt.','2022-06-07 05:44:51','2022-06-07 05:44:51',NULL);
 
 /*Table structure for table `users` */
 
@@ -233,21 +218,21 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`created_at`,`updated_at`) values 
-(31,'Leanne Brakus','mandy63@example.org','2022-05-29 04:47:06','$2y$10$1VhE2w2f4DFV658oszvZEeuZ/P6obFHIb7RNR4l6wC8iy7S2FswV2','9KGDTNGdL5','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(32,'Velda Parker','hermann.eda@example.com','2022-05-29 04:47:07','$2y$10$A4toi/iwI0hXCxzp9zKLoO3fTnGWqL38ukjfNFBJupZXQmEwI7U0K','yGf5i9mbiO','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(33,'Miss Ena Bailey V','pat63@example.com','2022-05-29 04:47:07','$2y$10$mz.DCim92NF5ithDB8MRAO40f19GQIil3yaKfWhf8NoMEysaeCc8G','mdvHf7NgTE','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(34,'Bria Lowe','asia.crona@example.org','2022-05-29 04:47:07','$2y$10$xGOj7cQQ8i7JkcMctk60keIlR.Q1TksboIp/uN5xlyqnv/UKjlG1G','sK9hks6g4F','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(35,'Halle Cummerata','carolina51@example.org','2022-05-29 04:47:07','$2y$10$H3GkPuYWCA1uzxGPiE5e2.MbfKRYqDdLZ9buN1UJdNNgM4cmbxZLG','vQxUWImrhL','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(36,'Markus Conroy','idibbert@example.net','2022-05-29 04:47:07','$2y$10$H58UI5I6GnxkbB4wWBX.UePtVOg15iHlMnGnr0yJNebWvX1dhfy9i','WQDhratzuv','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(37,'Verda Nicolas','ldaugherty@example.net','2022-05-29 04:47:07','$2y$10$E5hiP/uguqcP2DGsXR6FN.zqOkQYKldWTaHcwppgiom/xTfGEILh2','BrU6tgPu8R','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(38,'Steve Connelly','rolfson.rose@example.com','2022-05-29 04:47:07','$2y$10$RRUudALmRDZdG04sh/.R9.EzATZbr3EA4SKE7BTHuOta7TRLtyC16','UIjleFkpko','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(39,'Prof. Breanna Labadie','tillman.ressie@example.org','2022-05-29 04:47:07','$2y$10$v6Qn/Aig0OGVs7BuL9xemerTELVODzBMCgUGCy6SuQZVbS/Wvd1Ae','1aYUxfEfuK','2022-05-29 04:47:08','2022-05-29 04:47:08'),
-(40,'Ferne Goldner','kory.kling@example.net','2022-05-29 04:47:07','$2y$10$ErqKbgTX7QuQu4tLxbnbQ.8QDlKufAQ6yInrUji1B3ElXgcz131SS','Mvh2mfOAVR','2022-05-29 04:47:08','2022-05-29 04:47:08');
+(1,'Madalyn Stokes','genesis47@example.com','2022-06-07 05:44:50','$2y$10$cEYgY3jQfMpOARjpheVWOOzR2Kgvs2lU1KjhUmJ34clXtb3v0/ory','KCCd7bSKNP','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(2,'Henry Mayert III','ggusikowski@example.net','2022-06-07 05:44:50','$2y$10$OD0lqweNm/7RxhwQ3ZpRbeEJvFQ53FmXdoRqLZYVMc1Lg7rvB6s7S','FVbXd8g4YO','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(3,'Heaven Walsh','ykunze@example.org','2022-06-07 05:44:50','$2y$10$Y3iBv2/rQZo.QIwF6n5GTewVMKJ6BQhIb9rHlujwZ9FQ1/jLUwGgi','CcdVagJ8Xm','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(4,'Maximus Roberts','louie95@example.com','2022-06-07 05:44:50','$2y$10$xaNr1EPatVlD6uouF6QSluyec.THVSDePHtTfCELf7P1aXbaDmSH2','QTNQHsbdUO','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(5,'Miss Prudence Herzog MD','dhamill@example.net','2022-06-07 05:44:50','$2y$10$tFFtXm0hUyBaCbDT0gBf7eyD60raj.OP/7e83Xso2yqSFfKo7X4fm','bt3OZfY5xm','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(6,'Bulah Bahringer','christiansen.demarcus@example.net','2022-06-07 05:44:50','$2y$10$ZVltdXDPm2kSoMOnN2qv0OMbBZzsm8Qz4XnQAUZOAbJTPrtkhsOH.','6vyfM0G72w','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(7,'Prof. Mariam Nienow DDS','lillie10@example.org','2022-06-07 05:44:50','$2y$10$/pcOlYhZiDgHRN5ruw5S4OExyorw10uNwD4Hd5R9cKj1JIKNmMXcm','kkW7asd1E2','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(8,'Herbert Kihn IV','marvin.milo@example.com','2022-06-07 05:44:50','$2y$10$51g2GG3HvukeZQaM/miaY.lfq4NMxdFysAeBzpxL5SmRVWp5KV2Rm','GKNTIN9zde','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(9,'Domenic Sawayn','fwehner@example.org','2022-06-07 05:44:50','$2y$10$lzJDlZe0ZHV/g/1IUxxQiOyGU7ecy4wQ3QrMLkQaYMoSQKk7lTa8i','pU8x7SwWYn','2022-06-07 05:44:51','2022-06-07 05:44:51'),
+(10,'Rita Kunze','bridgette.parker@example.com','2022-06-07 05:44:50','$2y$10$bxCIrJ396Ah1qHcRj3qhGuOwJtDfhzjSK5RclWjTq4i1rIydTWOJO','zE8kYxzvDu','2022-06-07 05:44:51','2022-06-07 05:44:51');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

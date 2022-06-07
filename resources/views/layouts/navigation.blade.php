@@ -43,7 +43,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('contact.index')}}">
+            <a class="nav-link" href="{{route('contactus.index')}}">
                 <i class="mdi mdi-contacts menu-icon"></i>
                 <span class="menu-title">Contact Us</span>
             </a>

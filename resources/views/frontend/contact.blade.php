@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 offset-md-2">
-                    <form method="post" action="{{route('front.contact.save')}}" id="main_form" class="main_form">
+                    <form method="post" action="{{route('front.save')}}" id="main_form" class="main_form">
                         @csrf
                         <div class="row">
                             <div class="col-md-12 ">
@@ -36,29 +36,6 @@
         </div>
     </div>
 
-
-
-
-<script src="{{ asset('jquery-3.5.0.min.js') }}"></script>
-    <script src="{{ asset('main.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $(".button").on("click", function() {
-                $(".result").text("");
-                $(".loading-icon").removeClass("hide");
-                $(".button").attr("disabled", false);
-
-            });
-        });
-
-        $(document).ajaxSend(function() {
-            $(".loading-icon").show();
-
-        })
-        $(document).ajaxComplete(function() {
-            $('.loading-icon').hide();
-        });
-    </script>
     <style>
         .button:disabled {
             opacity: 0.9;

@@ -27,7 +27,7 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-
+    <script src="{{ asset('jquery-3.5.0.min.js') }}"></script>
 </head>
 <body>
 @inject('frontControllerObject','\App\Http\Controllers\FrontendController')
@@ -64,10 +64,12 @@
 <!-- footer section start -->
 <div class="footer_section w-100 float-left h-auto layout_padding">
     <div class="container">
-        <div class=" input_btn_main m-auto  ">
-            <input type="text" class=" mail_text w-100 float-left h-auto " placeholder="Enter your email" name="Enter your email">
-            <div class="subscribe_bt"><a href="javascript:void(0)" class="float-left text-center text-uppercase col-lg-3">Subscribe</a></div>
-        </div>
+        <form id="subscribe_form" method="post" action="{{route('front.subscribe.save')}}"  class=" input_btn_main m-auto  ">
+            @csrf
+            <input type="text" class=" mail_text w-100 float-left h-auto"  placeholder="Enter your email" name="email" required="required">
+            <div class="subscribe_bt">
+                <button type="submit" class="border-0 float-left text-center text-uppercase col-lg-3">Subscribe</button></div>
+        </form>
         <div class="location_main w-100 text-center">
             @php
                 $socials = $frontControllerObject->getAddress();
@@ -99,5 +101,36 @@
     </div>
 </div>
 <!-- copyright section end -->
+
+<script>
+    $(function(){
+        $("#subscribe_form").on('submit', function(e){
+            e.preventDefault();
+            $.ajax({
+                url:$(this).attr('action'),
+                method:$(this).attr('method'),
+                data:new FormData(this),
+                processData:false,
+                dataType:'json',
+                contentType:false,
+                success:function(data){
+                    if(data.status == 0){
+                        $.each(data.error, function(prefix, val){
+                            $(prefix+'_error').text(val[0]);
+                        });
+                    }else{
+                        $('#subscribe_form')[0].reset();
+                        $.notify(data.message, "success");
+                    }
+                },
+                error: function (e) {
+                    $.notify(e.getMessage(), "error");
+                }
+            });
+        });
+    });
+</script>
+<script src="{{ asset('/assets/js/notify.min.js') }}"></script>
+<script src="{{ asset('main.js') }}"></script>
 </body>
 </html>
